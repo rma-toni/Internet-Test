@@ -19,21 +19,20 @@ def clear():
 
 def print_results(counter, loss_counter):
     clear()
+    
+    print("\n-------------RMAF SOFTWARE-------------\n")
+
     percent = (loss_counter * 100) / counter
 
     if(percent <= 1 ):
-        print(OKGREEN+"Todo correcto!"+ENDC)
+        print(OKGREEN+"            Todo correcto!\n"+ENDC)
     elif(percent <= 2.5):
-        print(WARNING+"Hay problemas pero aguanta todavia"+ENDC)
+        print(WARNING+"         Inestabilidad leve\n"+ENDC)
     else:
-        print(FAIL+"No funciona, que alguien nos ayude :("+ENDC)
+        print(FAIL+"        Inestabilidad grave\n"+ENDC)
 
-    print(percent)
 
-    print (counter)
-    print (loss_counter)
-
-    print(f"Se perfieron {loss_counter} paquetes de {counter} enviados")
+    print(f"Se perdieron {loss_counter} paquetes de {counter} enviados")
 
 
 def main():
